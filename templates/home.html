@@ -1,0 +1,21 @@
+<link rel="stylesheet" href="/static/style.css">
+<html>
+  <head>
+    <title>Dictionar roman-tatar</title>
+  </head>
+  <body>
+    <h1><a href="/">Dictionar roman-tatar</a></h1>
+    <div class="flag-container">
+      <img src="/static/crimean-tatar-flag.png" alt="Crimean Tatar flag">
+    </div>
+    <h2>Cuvantul zilei</h2>
+  <p>Romana: {{ word_of_the_day.romanian }}</p>
+  <p>Tatara: {{ word_of_the_day.turkish }}</p>
+
+
+    <form method="get" action="/search">
+      <input type="text" name="query" placeholder="Search...">
+      <button type="submit">Search</button>
+    </form>
+  </body>
+</html>

@@ -1,0 +1,27 @@
+<link rel="stylesheet" href="/static/style.css">
+<html>
+  <head>
+    <title>Dictionar roman-tatar</title>
+  </head>
+  <body>
+    <h1><a href="/">Dictionar roman-tatar</a></h1>
+    <div class="flag-container">
+      <img src="/static/crimean-tatar-flag.png" alt="Crimean Tatar flag">
+    </div>
+    <form method="get" action="/search">
+      <input type="text" name="query" placeholder="Search..." value="{{ query }}">
+      <button type="submit">Cauta </button>
+    </form>
+    {% if result %}
+    {% if result.romanian == query %}
+      <p>Am gasit cuvantul cautat!:</p>
+    {% else %}
+      <p>Nu am gasit cuvantul cautat. Cel mai similar cuvant este urmatorul:</p>
+    {% endif %}
+    <p>Romanian: {{ result.romanian }}</p>
+    <p>Turkish: {{ result.turkish }}</p>
+  {% else %}
+    <p>No match found.</p>
+  {% endif %}
+  </body>
+</html>
